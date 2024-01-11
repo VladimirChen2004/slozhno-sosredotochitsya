@@ -9,4 +9,69 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --title-color: #FFC2E6;
+  --shadow_border: #FF0070;
+  --text-decor: #FF8DCB;
+  --heading: #353430;
+  --text-head: #353430;
+  --text: #353430;
+  --font-title: "IBM Plex Mono bold";
+  --font-text: "IBM Plex Mono";
+  --link: #FF8DCB;
+
+  background-color: #FFF1F7;
+    
+  .right-corner,
+  .left-corner,
+  .footer_right-corner,
+  .footer_left-corner,
+  .header__theme-menu {
+    --text-decor: #353430;
+    --shadow_border: #353430;
+  }
+  
+  .header {
+    background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
+    background-attachment: fixed;
+  }
+
+  .decorative-dark-element {
+    display: none;
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --title-color: #FFC2E6;
+    --shadow_border: #FF0070;
+    --text-decor: #FF8DCB;
+    --heading: #353430;
+    --text-head: #353430;
+    --text: #353430;
+    --font-title: "IBM Plex Mono bold";
+    --font-text: "IBM Plex Mono";
+    --link: #FF8DCB;
+  }
+  
+  .right-corner,
+  .left-corner,
+  .footer_right-corner,
+  .footer_left-corner,
+  .header__theme-menu {
+    --text-decor: #353430;
+    --shadow_border: #353430;
+  }
+
+  .page {
+    background-color: #FFF1F7;
+  }
+
+  .header {
+    background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
+    background-attachment: fixed;
+  }
+  .decorative-dark-element {
+    display: none;
+  }
 }
