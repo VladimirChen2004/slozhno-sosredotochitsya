@@ -18,21 +18,15 @@
   --font-title: "IBM Plex Mono bold";
   --font-text: "IBM Plex Mono";
   --link: #FF0070;
+  --nav: #FF0070;
+  --corner: #FF0070;
+  --nav-click: rgba(255, 0, 112, 0.40);
   
-  background-color: #000028;
+  background: url("../images/cover-image-dark.png") lightgray 50% / cover no-repeat;
+  background-attachment: fixed;
   
-  .header {
-    background: url("../images/cover-image-dark.png") lightgray 50% / cover no-repeat;
-    background-attachment: fixed;
-  }
 
-  .right-corner,
-  .left-corner,
-  .footer_right-corner,
-  .footer_left-corner,
-  .header__theme-menu {
-  --shadow_border: #FF0070;
-  --text-decor: #FF0070;
+.decorative-dark-element {
+    display: inline;
   }
-
 }
