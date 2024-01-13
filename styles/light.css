@@ -18,22 +18,16 @@
   --font-title: "IBM Plex Mono bold";
   --font-text: "IBM Plex Mono";
   --link: #FF8DCB;
+  --nav-click: rgba(50, 49, 45, 0.40);
 
-  background-color: #FFF1F7;
     
-  .right-corner,
-  .left-corner,
-  .footer_right-corner,
-  .footer_left-corner,
-  .header__theme-menu {
-    --text-decor: #353430;
-    --shadow_border: #353430;
-  }
+  --nav: #353430;
+  --corner: #353430;
   
-  .header {
-    background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
-    background-attachment: fixed;
-  }
+  
+  background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
+  background-attachment: fixed;
+  
 
   .decorative-dark-element {
     display: none;
@@ -52,22 +46,12 @@
     --font-title: "IBM Plex Mono bold";
     --font-text: "IBM Plex Mono";
     --link: #FF8DCB;
+    --nav: #353430;
+    --corner: #353430;
+    --nav-click: rgba(50, 49, 45, 0.40);
   }
   
-  .right-corner,
-  .left-corner,
-  .footer_right-corner,
-  .footer_left-corner,
-  .header__theme-menu {
-    --text-decor: #353430;
-    --shadow_border: #353430;
-  }
-
   .page {
-    background-color: #FFF1F7;
-  }
-
-  .header {
     background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
     background-attachment: fixed;
   }
