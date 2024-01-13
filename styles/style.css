@@ -1,13 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .link {
-  display:inline-flex;
-  align-items: center;
   text-shadow: 2px 2px 0px var(--link);
   outline: none;
   text-decoration: none;
-  padding-bottom: 5px;
-  height: 16px;
 }
 
 .link:hover {
@@ -23,30 +19,42 @@
 }
 
 .page {
-  height: 100vh;
-  width: 100vw;
-  background-color: #000028;
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-}
-
-.header {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  padding: 10px;
+  overflow: auto;
+  max-width: 100%;
   background: url("../images/cover-image-dark.png") lightgray 50% / cover no-repeat;
   background-attachment: fixed;
 }
 
-.right-corner {
+.header {
+  max-width: 100vw;
+  height: 100vh;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+.decorated-zone::before {
+  content: "";
   position: absolute;
   top: 9px;
   right: 10px;
   width: 25px;
   height: 25px;
-  border-top: 1px solid var(--shadow_border);
-  border-right: 1px solid var(--shadow_border);
+  border-top: 1px solid var(--corner);
+  border-right: 1px solid var(--corner);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: 11px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--corner);
+  border-left: 1px solid var(--corner);
+  
 }
 
 .decorative-dark-element {
@@ -55,7 +63,7 @@
   top: 10px;
   right: 38px;
   text-transform: uppercase;
-  font-family: var(--font-text);
+  font-family: var(--font);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -73,6 +81,10 @@
   filter: drop-shadow(0px 0px 4px var(--shadow_border));
   background-color: var(--shadow_border); 
   border-radius: 50%;
+}
+
+.header__theme-menu {
+  max-width: 100%;
 }
 
 .header__theme-menu-list {
@@ -94,9 +106,9 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  color: var(--text-decor);
+  color: var(--nav);
   border: 0;
-  font-family: var(--font-text);
+  font-family: var(--font);
   text-transform: lowercase;
   font-size: 18px;
   height: 100%;
@@ -111,15 +123,13 @@
   pointer-events: none;
 }
 
-.header__theme-menu-button_active, .header__theme-menu-button:hover {
-  border-color: var(--shadow_border);
-  border: 1px solid;
+.header__theme-menu-button_active{
+  border: 1px solid var(--nav);
 }
 
-.header__theme-menu-button:focus-visible {
+.header__theme-menu-button:focus-visible, .header__theme-menu-button:hover  {
   outline: none;
-  border-color: var(--shadow_border);
-  border-bottom: 1px solid;
+  border: 1px solid var(--nav-click);
 }
 
 .title {
@@ -127,7 +137,7 @@
   align-items: center;
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--shadow_border);
-  font-family: var(--font-title), monospace;  
+  font-family: var(--font), monospace;  
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* Для мобильных */
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
@@ -139,24 +149,14 @@
 }
 
 .title-description {
-  font-family: var(--font-title);
+  font-family: var(--font);
   color: var(--text-head);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
   background-color: var(--text-decor);
-  margin-bottom: 15px;
-}
-
-.left-corner {
-  position: absolute;
-  bottom: 11px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--shadow_border);
-  border-left: 1px solid var(--shadow_border);
+  margin-bottom: 14px;
 }
 
 /* стили для main */
@@ -183,17 +183,21 @@
 }
 
 /* текст */
-.h2 {
+.block-heading {
   color: var(--heading)
 }
 
-.h3 {
+.block-heading-reverse {
   color: var(--text-head);
   background-color: var(--text-decor);
   margin-bottom: 20px;
 }
 
-.h4 {
+section:last-child .block-heading-reverse {
+  margin-bottom: 10px;
+}
+
+.subtitle {
   color: var(--text-head);
   background-color: var(--text-decor);
   margin-bottom: 10px;
@@ -206,12 +210,12 @@
 }
 
 .title-style {
-  font-family: var(--font-title);
+  font-family: var(--font);
   font-weight: 700;
 }
 
 .text-style {
-  font-family: var(--font-text);
+  font-family: var(--font);
   font-weight: 400;
 }
 
@@ -233,29 +237,12 @@
 /* конец стилей блока main */
 
 .footer {
-  display: grid;
-  grid-template-rows: 25px 1fr 25px;
-  width: 100vw;
-  height: 100vh;
-  padding: 10px;
-}
-
-
-.footer_right-corner {
-  position: relative;
-  left: calc(100% - 25px);
-  width: 25px;
-  height: 25px;
-  border-top: 1px solid var(--shadow_border);
-  border-right: 1px solid var(--shadow_border);
-}
-
-.footer_title-block {
   display: flex;
+  position: relative;
   justify-content: center;
-  height: 100%;
-  width: 100%;
   text-align: center;
+  height: 100vh;
+  max-width: 100vw;
 }
 
 .footer_title {
@@ -263,27 +250,17 @@
   align-items: center;
   color: var(--title-color);
   text-shadow: 2px 2px 0px var(--shadow_border);
-  font-family: var(--font-title), monospace;  
+  font-family: var(--font), monospace;  
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem); /* Для мобильных */
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
 }
 
-.footer_left-corner {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  border-bottom: 1px solid var(--shadow_border);
-  border-left: 1px solid var(--shadow_border);
-}
-
-
 /* переход на больший экран */
 
 /* общие правила */
 
-@media ((width >= 768px) and (height >= 1024px)) or 
-((width >= 1024px) and (height >= 768px)) {
+@media (width >= 768px) {
   .header {
     padding: 20px 20px 20px 0;
   }
@@ -293,12 +270,12 @@
     right: calc(38px + 10px);
   }
 
-  .right-corner {
+  .decorated-zone::before {
     top: calc(9px + 10px);
     right: calc(10px + 10px);
   }
   
-  .left-corner {
+  .decorated-zone::after {
     bottom: calc(11px + 10px);
     left: calc(10px + 10px);
   }
@@ -312,7 +289,7 @@
     width: 100%;
   }
 
-  .section:nth-child(2n) .h2 {
+  .section:nth-child(2n) .block-heading {
     max-width: 30%;
   }
 
@@ -321,33 +298,33 @@
     gap: 80px;
   }
   
-  .sunset {
-    grid-area: sunset;
+  .image:nth-child(1) {
+    grid-area: first-card;
   }
 
-  .ice-cream {
-    grid-area: ice-cream;
+  .image:nth-child(2) {
+    grid-area: second-card;
   }
 
-  .tape {
-    grid-area: tape;
+  .image:nth-child(3) {
+    grid-area: third-card;
   }
 
-  .books {
-    grid-area: books;
+  .image:nth-child(4) {
+    grid-area: fourth-card;
   }
 
-  .street {
-    grid-area: street;
+  .image:nth-child(5) {
+    grid-area: fifth-card;
   }
 
   .galary {
-    grid-template-rows: calc(1fr - 1px) 1fr calc(1fr - 1px);
-    grid-template-columns: calc(100vw / 4) 1fr calc(2fr - 100vw / 4);
+    grid-template-rows: calc(100vw / 4) 1fr calc(2fr - 100vw / 4);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-    "sunset sunset ice-cream"
-    "tape books ice-cream"
-    "tape street street";
+    "first-card first-card second-card"
+    "third-card fourth-card second-card"
+    "third-card fifth-card fifth-card";
     gap: 20px;
     margin-top: 20px;
   }
@@ -356,10 +333,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  .footer {
-    padding: 20px;
   }
 
   .footer_title {
@@ -372,7 +345,7 @@
 
 /* разрешение 768 на 1024 */
 
-@media (1024px > width >= 768px) and (height >= 1024px) {
+@media (1024px > width >= 768px) {
 
   .header__theme-menu-list {
     padding-top: 104px;
@@ -395,7 +368,7 @@
 
 /* разрешение 1024 * 768  */
 
-@media (width >= 1024px) and (height >= 768px) {
+@media (width >= 1024px) {
   .header {
     padding-top: 18px;
   }
