@@ -10,7 +10,9 @@
   --heading: #FF0070;
   --text-head: #000028;
   --text: #F1B2CE;
-  --font-title: "IBM Plex Mono bold";
-  --font-text: "IBM Plex Mono";
+  --font: "IBM Plex Mono";
   --link: #FF0070;
+  --nav: #FF0070;
+  --corner: #FF0070;
+  --nav-click: rgba(255, 0, 112, 0.40);
 }
