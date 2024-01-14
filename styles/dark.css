@@ -15,8 +15,6 @@
   --heading: #FF0070;
   --text-head: #000028;
   --text: #F1B2CE;
-  --font-title: "IBM Plex Mono bold";
-  --font-text: "IBM Plex Mono";
   --link: #FF0070;
   --nav: #FF0070;
   --corner: #FF0070;
@@ -24,9 +22,9 @@
   
   background: url("../images/cover-image-dark.png") lightgray 50% / cover no-repeat;
   background-attachment: fixed;
-  
 
-.decorative-dark-element {
-    display: inline;
-  }
+}
+
+.page.theme_dark .decorative-dark-element {
+  display: inline;
 }
