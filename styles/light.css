@@ -15,8 +15,6 @@
   --heading: #353430;
   --text-head: #353430;
   --text: #353430;
-  --font-title: "IBM Plex Mono bold";
-  --font-text: "IBM Plex Mono";
   --link: #FF8DCB;
   --nav-click: rgba(50, 49, 45, 0.40);
 
@@ -28,10 +26,11 @@
   background: url("../images/cover-image-light.png"), lightgray 50% / cover no-repeat;
   background-attachment: fixed;
   
+}
 
-  .decorative-dark-element {
-    display: none;
-  }
+
+.page.theme_light .decorative-dark-element {
+  display: none;
 }
 
 
@@ -43,8 +42,6 @@
     --heading: #353430;
     --text-head: #353430;
     --text: #353430;
-    --font-title: "IBM Plex Mono bold";
-    --font-text: "IBM Plex Mono";
     --link: #FF8DCB;
     --nav: #353430;
     --corner: #353430;
