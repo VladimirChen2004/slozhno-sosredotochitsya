@@ -319,7 +319,6 @@ section:last-child .block-heading-reverse {
   }
 
   .galary {
-    grid-template-rows: calc(100vw / 4) 1fr calc(2fr - 100vw / 4);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "first-card first-card second-card"
